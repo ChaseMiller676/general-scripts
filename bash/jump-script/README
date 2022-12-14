@@ -1,0 +1,13 @@
+This is a simple script designed to allow quick and easy directory navigation without all of the typing.
+Not any real error handeling built in, the script should just work if you type the command in the right format.
+Format:
+	$ . jumpTo <directory>
+	  or
+	$ source jumpTo <directory>
+Example:
+	$ . jumpTo bin
+	  or
+	$ source jumpTo bin
+
+I would recommend aliasing the command in your .bashrc so as to reduce the extra characters. Personally I alias
+the command as jt=". jumpTo".

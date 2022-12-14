@@ -1,0 +1,9 @@
+This script is meant to automate the creation of an empty script. It's basically touch but for making scripts.
+The script is very bare bones, so theres not much need for error checking or anything. The only things to be aware of is
+this script won't create a file that has the same name as a file in the working directory, and the shell flag doesn't have
+any sanitization, so you won't be told if you've entered an actual shell language or not.
+
+Command Format:
+	$ makeScript <file-name> <shell>
+Example:
+	$ makeScipt myScript bash
