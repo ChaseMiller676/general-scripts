@@ -1,0 +1,18 @@
+#! /bin/bash
+
+if [ "$1" == "" ]; then
+    echo "No Name Given"
+
+	
+else
+    if [ -f ./"$1"* ]; then
+	echo "File with name $1 already exists"
+    elif [ "$2" == "" ]; then
+	echo "No Shell Type Given"
+    else
+	touch "$1"
+	chmod +x "$1"
+	echo "#! /bin/$2" >> "$1"
+	echo "File $1 Created"
+    fi
+fi

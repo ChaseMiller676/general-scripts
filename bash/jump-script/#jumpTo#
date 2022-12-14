@@ -1,0 +1,29 @@
+#! /bin/bash
+
+function jumpTo(){
+    if [ "$EUID" -ne 0 ]; then
+	echo "Permission Denied: Root Privileges Required"
+    else
+	declare -a array;
+
+	mapfile -t array < <(find / -name "$1" -type d | grep "$1")
+
+	inc=1;
+	for i in ${array[@]};
+	do
+	    echo "$inc: $i"
+	    ((inc=inc+1))
+	done
+
+	printf "Select Specific Directory: "
+	read choice;
+
+	((choice=choice-1))
+	echo "Changing directory to ${array[$choice]}"
+
+	return 0
+    fi
+}
+
+if [ jumpTo "$1" == "$1" ]; then
+   cd  
